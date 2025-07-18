@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seffqr3h Restaurant - FAQ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #eaeaea;
+        }
+        header {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #666;
+        }
+        main {
+            padding: 20px;
+        }
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 3.5rem;
+            z-index: 2;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .faq-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 40px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-item h3 {
+            margin: 0 0 10px;
+            cursor: pointer;
+            position: relative;
+        }
+        .faq-item p {
+            margin: 0;
+            display: none;
+        }
+        .faq-item h3::after {
+            content: '\f078';
+
+            font-family: 'FontAwesome';
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: transform 0.3s;
+        }
+        .faq-item.active h3::after {
+            transform: rotate(-180deg);
+        }
+        .faq-item.active p {
+            display: block;
+            padding-top: 10px;
+        }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 40px 0;
+        }
+        .image-gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+        .contact-info {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .contact-info h2 {
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Frequently Asked Questions</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">FAQ</a>
+    </nav>
+    <main>
+        <section class="hero">
+            <h1>Your Questions Answered</h1>
+        </section>
+        <section class="faq-section">
+            <div class="faq-item">
+                <h3>What are your opening hours?</h3>
+                <p>We are open from 11 AM to 11 PM, Monday to Sunday.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you offer vegan options?</h3>
+                <p>Yes, our menu includes a variety of vegan dishes made with fresh, organic ingredients.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How can I make a reservation?</h3>
+                <p>You can make a reservation by calling us directly or through our website's contact form.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are private events available?</h3>
+                <p>Yes, we offer private dining options for special events. Please contact us for more details.</p>
+            </div>
+        </section>
+        <section class="image-gallery">
+            <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088" alt="Gallery Image 1">
+            <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187" alt="Gallery Image 2">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Gallery Image 3">
+        </section>
+        <section class="contact-info">
+            <h2>Contact Us</h2>
+            <p><i class="fas fa-phone-alt"></i> +123 456 7890</p>
+            <p><i class="fas fa-envelope"></i> contact@seffqr3h.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Culinary Street, Food City</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 seffqr3h Restaurant | All Rights Reserved</p>
+    </footer>
+    <script>
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', () => {
+                item.parentNode.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
